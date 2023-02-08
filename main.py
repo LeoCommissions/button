@@ -34,12 +34,12 @@ class RolesBot(commands.Bot):
     def __init__(self) -> None:
         super().__init__(
             command_prefix=commands.when_mentioned,
-            help_command=None,
+            help_command=commands.DefaultHelpCommand(no_category='Commands'),
             intents=discord.Intents.default() | discord.Intents(members=True),
         )
 
         # load config
-        with open("bot_config.json", "r") as fp:
+        with open("config.json", "r") as fp:
             self.config = json.load(fp)
 
     async def setup_hook(self) -> None:
@@ -52,10 +52,12 @@ bot = RolesBot()
 @bot.group(name="load")
 @commands.has_permissions(administrator=True)
 async def load_waitlist(ctx: commands.Context):
+    """waitlist_notifications Loads the waitlist message"""
     return
 
 
 @load_waitlist.command(name="waitlist_notifications")
+@commands.has_permissions(administrator=True)
 async def waitlist_notifications(ctx: commands.Context):
     """Loads the waitlist message"""
     config = bot.config['audiophile_and_producer']
