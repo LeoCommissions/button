@@ -10,7 +10,7 @@ class RolesView(discord.ui.View):
 
     @discord.ui.select(custom_id='ReactionRoles-Add', min_values=0)
     async def role_select(self, interaction: discord.Interaction, select: discord.ui.Select):
-        await interaction.response.defer(ephemeral=True)
+        await interaction.response.defer(ephemeral=True, thinking=True)
 
         if not interaction.guild or not isinstance(interaction.user, discord.Member):
             return await interaction.followup.send("Discord thinks you are not a member of this server", ephemeral=True)
