@@ -1,0 +1,17 @@
+{
+    "bot_token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "audiophile_and_producer": {
+        "message_content": "Are you excited for our upcoming audiophile and producer servers? Grab these roles to be notified when they go live!",
+        "place_holder": "Make a selection",
+        "roles": [
+            {
+                "id": "0000000000000000000",
+                "title": "Producer"
+            },
+            {
+                "id": "0000000000000000000",
+                "title": "Audiophile"
+            }
+        ]
+    }
+}
